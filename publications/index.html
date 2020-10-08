@@ -1,87 +1,844 @@
-{% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-  {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + title %}{#
 
-  #}{% if page.type === "categories" and not page.title %}{#
-    #}{{ __('title.category') + page_title_suffix }}{#
-  #}{% elif page.type === "tags" and not page.title %}{#
-    #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{% elif page.type === "schedule" and not page.title %}{#
-    #}{{ __('title.schedule') + page_title_suffix }}{#
-  #}{% else %}{#
-    #}{{ page.title + page_title_suffix }}{#
-  #}{% endif %}{#
-#}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {##################}
-    {### PAGE BLOCK ###}
-    {##################}
-    <div class="post-block page">
-      {% include '_partials/page-header.swig' %}
-      {#################}
-      {### PAGE BODY ###}
-      {#################}
-      <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
-        {# tagcloud page support #}
-        {% if page.type === "tags" %}
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                {% set visibleTags = 0 %}
-                {% for tag in site.tags %}
-                  {% if tag.length %}
-                    {% set visibleTags += 1 %}
-                  {% endif %}
-                {% endfor %}
-                {{ _p('counter.tag_cloud', visibleTags) }}
-            </div>
-            <div class="tag-cloud-tags">
-              {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: '#ccc', end_color: '#111'}) }}
-            </div>
-          </div>
-        {% elif page.type === 'categories' %}
-          <div class="category-all-page">
-            <div class="category-all-title">
-                {% set visibleCategories = 0 %}
-                {% for cat in site.categories %}
-                  {% if cat.length %}
-                    {% set visibleCategories += 1 %}
-                  {% endif %}
-                {% endfor %}
-                {{ _p('counter.categories', visibleCategories) }}
-            </div>
-            <div class="category-all">
-              {{ list_categories() }}
-            </div>
-          </div>
-        {% elif page.type === 'schedule' %}
-          {% include 'schedule.swig' %}
-        {% else %}
-          {{ page.content }}
-        {% endif %}
-      </div>
-      {#####################}
-      {### END PAGE BODY ###}
-      {#####################}
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ajZK9uLUk8P_3aC1qEXbocD7aZUZOlZeL3yisIow9ko" />
+
+
+
+  <meta name="msvalidate.01" content="293C974A486AEC99FF7AFA48F0B63338" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|Georgia:300,300italic,400,400italic,700,700italic|Georgia:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32px.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16px.ico?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="2020 Who Likes What? – SplitLBI in Exploring Preferential Diversity of RatingsQianqian Xu, Jiechao Xiong, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. Who Likes What? – SplitLBI in Explori">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Publications">
+<meta property="og:url" content="https://qianqianxu010.github.io/publications/index.html">
+<meta property="og:site_name" content="Qianqian Xu&#39;s Homepage">
+<meta property="og:description" content="2020 Who Likes What? – SplitLBI in Exploring Preferential Diversity of RatingsQianqian Xu, Jiechao Xiong, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. Who Likes What? – SplitLBI in Explori">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-11-20T07:57:49.000Z">
+<meta property="article:modified_time" content="2019-12-16T06:25:59.000Z">
+<meta property="article:author" content="Qianqian Xu">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+  <link rel="canonical" href="https://qianqianxu010.github.io/publications/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Publications | Qianqian Xu's Homepage</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qianqian Xu's Homepage</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    {% include '_partials/breadcrumb.swig' %}
-    {######################}
-    {### END PAGE BLOCK ###}
-    {######################}
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Associate Professor at ICT, CAS</h1>
+      
+    
   </div>
 
-{% endblock %}
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-publications menu-item-active">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/publications/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-file&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Publications</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-awards">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awards/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-trophy&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Honors &amp; Awards</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-services">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/services/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-bookmark&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Academic Services</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-members">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/members/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-user&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;Current Team Members</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-中文版">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="http://vipl.ict.ac.cn/people/~qianqianxu" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-language&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;中文版</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+          
+          <div class="content-inner"></div>
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h2 class="post-title" itemprop="name headline">Publications</h2>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h3 id="2020"><a href="#2020" class="headerlink" title="2020"></a>2020</h3><ul>
+<li><strong>Who Likes What? – SplitLBI in Exploring Preferential Diversity of Ratings</strong><br>Qianqian Xu, Jiechao Xiong, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. Who Likes What? – SplitLBI in Exploring Preferential Diversity of Ratings. AAAI Conference on Artificial Intelligence (AAAI), 2020. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2020/blob/master/paper/AAAI2020-Xu.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2020/blob/master/supplementary/AAAI2020Supp.pdf">supp</a>]</li>
+<li><strong>Global Context-Aware Progressive Aggregation Network for Salient Object Detection</strong><br>Zuyao Chen, Qianqian Xu, Ruimin Cong and Qingming Huang. Global Context-Aware Progressive Aggregation Network for Salient Object Detection. AAAI Conference on Artificial Intelligence (AAAI), 2020. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/JosephChenHub/GCPANet/blob/master/GCPANet.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/JosephChenHub/GCPANet">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8918070/">Fast Stochastic Ordinal Embedding with Variance Reduction and Adaptive Step Size</a></strong><br>Ke Ma, Jinshan Zeng, Jiechao Xiong, Qianqian Xu, Xiaochun Cao, Wei Liu and Yuan Yao. Fast Stochastic Ordinal Embedding with Variance Reduction and Adaptive Step Size. IEEE Transactions on Knowledge and Data Engineering (TKDE), 2020 (Early Access). [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1912.00362">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/Stabilized_Stochastic_BB">code</a>]</li>
+</ul>
+<h3 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8319957/">From Social to Individuals: a Parsimonious Path of Multi-level Models for Crowdsourced Preference Aggregation</a></strong><br>Qianqian Xu, Jiechao Xiong, Xiaochun Cao, Qingming Huang and Yuan Yao. From Social to Individuals: a Parsimonious Path of Multi-level Models for Crowdsourced Preference Aggregation. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 41(4): 844–856, Apr. 2019. (Regular paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/blob/master/journal%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/tree/master/code">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/8645-isplit-lbi-individualized-partial-ranking-with-ties-via-split-lbi">iSplit LBI: Individualized Partial Ranking with Ties via Split LBI</a></strong><br>Qianqian Xu, Xinwei Sun, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. iSplit LBI: Individualized Partial Ranking with Ties via Split LBI. Annual Conference on Neural Information Processing Systems (NeurIPS), 3896–3906, 2019. (Poster) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/NeurIPS2019-iSplitLBI/blob/master/paper/NeurIPS19-iSplitLBI.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/NeurIPS2019-iSplitLBI">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/NeurIPS2019-iSplitLBI/blob/master/poster/NeurIPS2019-iSplitLBI-Poster.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="http://openaccess.thecvf.com/content_CVPR_2019/html/Xu_Deep_Robust_Subjective_Visual_Property_Prediction_in_Crowdsourcing_CVPR_2019_paper.html">Deep Robust Subjective Visual Property Prediction in Crowdsourcing</a></strong><br>Qianqian Xu, Zhiyong Yang, Yangbangyan Jiang, Xiaochun Cao, Qingming Huang and Yuan Yao. Deep Robust Subjective Visual Property Prediction in Crowdsourcing. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 8993–9001, 2019. (Poster) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/CVPR19-Deep-Robust-Subjective-Visual-Property-Prediction-in-Crowdsourcing/blob/master/paper/CVPR2019_xu.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/CVPR19-Deep-Robust-Subjective-Visual-Property-Prediction-in-Crowdsourcing">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/CVPR19-Deep-Robust-Subjective-Visual-Property-Prediction-in-Crowdsourcing/blob/master/paper/Poster-CVPR19-Deep_Robust_SVP_Prediction.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/8820-generalized-block-diagonal-structure-pursuit-learning-soft-latent-task-assignment-against-negative-transfer">Generalized Block-Diagonal Structure Pursuit: Learning Soft Latent Task Assignment against Negative Transfer</a></strong><br>Zhiyong Yang, Qianqian Xu, Yangbangyan Jiang, Xiaochun Cao and Qingming Huang. Generalized Block-Diagonal Structure Pursuit: Learning Soft Latent Task Assignment against Negative Transfer. Annual Conference on Neural Information Processing Systems (NeurIPS), 5846–5857, 2019. (Poster) [<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=rylOcEreUr">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/GBDSP-NeurIPS19">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/GBDSP-NeurIPS19/blob/master/conference_poster_2.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/8823-dm2c-deep-mixed-modal-clustering">DM2C: Deep Mixed-Modal Clustering</a></strong><br>Yangbangyan Jiang, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. DM2C: Deep Mixed-Modal Clustering. Annual Conference on Neural Information Processing Systems (NeurIPS), 5880–5890, 2019. (Spotlight) [<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=rJgt54Bx8r">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DM2C/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DM2C/blob/master/poster/NeurIPS2019-DM2C-Poster.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DM2C/blob/master/slides/NeurIPS2019-DM2C-slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ojs/index.php/AAAI/article/view/4510">Learning Personalized Attribute Preference via Multi-task AUC Optimization</a></strong><br>Zhiyong Yang, Qianqian Xu, Xiaochun Cao and Qingming Huang. Learning Personalized Attribute Preference via Multi-task AUC Optimization. AAAI Conference on Artificial Intelligence (AAAI), 5660–5667, 2019. (Oral) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1906.07341">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-19-Learning-Personalized-Attribute-Preference-via-Multi-task-AUC-Optimization">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-19-Learning-Personalized-Attribute-Preference-via-Multi-task-AUC-Optimization/blob/master/post_aaai19_zhiyong.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI19_3053_slides/blob/master/aaai_3053_slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ojs/index.php/AAAI/article/view/4154">Less but Better: Generalization Enhancement of Ordinal Embedding via Distributional Margin</a></strong><br>Ke Ma, Qianqian Xu, Zhiyong Yang and Xiaochun Cao. Less but Better: Generalization Enhancement of Ordinal Embedding via Distributional Margin. AAAI Conference on Artificial Intelligence (AAAI), 2978–2985, 2019. (Poster) [<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1812.01939">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/DMOE">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/alphaprime.github.io/blob/master/AAAI_19_Poster_1497.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ojs/index.php/AAAI/article/view/4790">Robust Ordinal Embedding from Contaminated Relative Comparisons</a></strong><br>Ke Ma, Qianqian Xu and Xiaochun Cao. Robust Ordinal Embedding from Contaminated Relative Comparisons. AAAI Conference on Artificial Intelligence (AAAI), 7908–7915, 2019. (Poster) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1812.01945">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/ROE">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/alphaprime.github.io/blob/master/AAAI_19_Poster_4517.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8712567">Split Multiplicative Multi-view Subspace Clustering</a></strong><br>Zhiyong Yang, Qianqian Xu, Weigang Zhang, Xiaochun Cao and Qingming Huang. Split Multiplicative Multi-view Subspace Clustering. IEEE Transactions on Image Processing (TIP), 28(10): 5147–5160, May 2019. (Regular paper) [<a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/333007034_Split_Multiplicative_Multi-view_Subspace_Clustering">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/SM2SC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3350915">Collaborative Preference Embedding against Sparse Labels</a></strong><br>Shilong Bao, Qianqian Xu, Ke Ma, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Collaborative Preference Embedding against Sparse Labels. ACM Conference on Multimedia (ACM MM), 2079–2087, 2019. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE/blob/master/Collaborative%20Preference%20Embedding%20against%20Sparse%20Labels.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE/blob/master/CPE_Poster.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE/blob/master/CPE_Slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3350919">Adversarial Preference Learning with Pairwise Comparisons</a></strong><br>Zitai Wang, Qianqian Xu, Ke Ma, Yangbangyan Jiang, Xiaochun Cao and Qingming Huang. Adversarial Preference Learning with Pairwise Comparisons. ACM Conference on Multimedia (ACM MM), 656–664, 2019. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons/blob/master/MM2019-fp337.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons/blob/master/Poster-MM19-Adversarial%20Preference%20Learning%20with%20Pairwise%20Comparisons.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons/blob/master/Slide_MM2019_Adversarial%20Preference%20Learning%20with%20Pairwise%20Comparisons.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3350852">Duet Robust Deep Subspace Clustering</a></strong><br>Yangbangyan Jiang, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Duet Robust Deep Subspace Clustering. ACM Conference on Multimedia (ACM MM), 1596–1604, 2019. (Spotlight) [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC/blob/master/paper/MM19-Duet-Robust-Deep-Subspace-Clustering.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC/blob/master/paper/MM19-DRDSC-Poster.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC/blob/master/paper/MM19-DRDSC-Slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8692732">Low-Light Image Enhancement via a Deep Hybrid Network</a></strong><br>Wenqi Ren, Sifei Liu, Lin Ma, Qianqian Xu, Xiangyu Xu, Xiaochun Cao, Junping Du and Ming-Hsuan Yang. Low-Light Image Enhancement via a Deep Hybrid Network. IEEE Transactions on Image Processing (TIP), 28(9): 4364–4375, Sep. 2019. (Regular paper) [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8692732">pdf</a>] [<a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1WYQd5z9NXW-IOWLSH3w70t3XnLUAHnAZ/view?usp=sharing">code</a>]</li>
+</ul>
+<h3 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3240597">A Margin-based MLE for Crowdsourced Partial Ranking</a></strong><br>Qianqian Xu, Jiechao Xiong, Xinwei Sun, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. A Margin-based MLE for Crowdsourced Partial Ranking. ACM Conference on Multimedia (ACM MM), 591–599, 2018. (Full paper) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1807.11014">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2018">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2018/blob/master/poster/MM18_poster_XU.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16218">HodgeRank with Information Maximization for Crowdsourced Pairwise Ranking Aggregation</a></strong><br>Qianqian Xu, Jiechao Xiong, Xi Chen, Qingming Huang and Yuan Yao. HodgeRank with Information Maximization for Crowdsourced Pairwise Ranking Aggregation. AAAI Conference on Artificial Intelligence (AAAI), 4326–4334, 2018. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2018/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2018/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2018/tree/master/dataset">dataset</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16597">From Common to Special: When Multi-Attribute Learning Meets Personalized Opinions</a></strong><br>Zhiyong Yang, Qianqian Xu, Xiaochun Cao and Qingming Huang. From Common to Special: When Multi-Attribute Learning Meets Personalized Opinions. AAAI Conference on Artificial Intelligence (AAAI), 515–522, 2018. (Poster) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.06867">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-2018-From-Common-to-Special-When-Multi-Attribute-Learning-Meets-Personalized-Opinions">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-2018-From-Common-to-Special-When-Multi-Attribute-Learning-Meets-Personalized-Opinions/blob/master/post_aaai18_zhiyong.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16082">Stochastic Non-convex Ordinal Embedding with Stabilized Barzilai-Borwein Step Size</a></strong><br>Ke Ma, Jinshan Zeng, Jiechao Xiong, Qianqian Xu, Xiaochun Cao, Wei Liu and Yuan Yao. Stochastic Non-convex Ordinal Embedding with Stabilized Barzilai-Borwein Step Size. AAAI Conference on Artificial Intelligence (AAAI), 3738–3745, 2018. (Poster) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.06446">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/Stabilized_Stochastic_BB">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/alphaprime.github.io/blob/master/AAAI_18_Poster.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3240582">When to Learn What: Deep Cognitive Subspace Clustering</a></strong><br>Yangbangyan Jiang, Zhiyong Yang, Qianqian Xu, Xiaochun Cao and Qingming Huang. When to Learn What: Deep Cognitive Subspace Clustering. ACM Conference on Multimedia (ACM MM), 718–726, 2018. (Full paper) [<a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/328375144_When_to_Learn_What_Deep_Cognitive_Subspace_Clustering">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/MM18-Deep-Cognitive-Subspace-Clustering">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/MM18-Deep-Cognitive-Subspace-Clustering/blob/master/paper/MM18-DeepCogSC-Poster.pdf">poster</a>]</li>
+</ul>
+<h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3123267">Exploring Outliers in Crowdsourced Ranking for QoE</a></strong><br>Qianqian Xu, Ming Yan, Chendi Huang, Jiechao Xiong, Qingming Huang, and Yuan Yao. Exploring Outliers in Crowdsourced Ranking for QoE. ACM Conference on Multimedia (ACM MM), 1540–1548, 2017. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2017/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2017/tree/master/code">code</a>]</li>
+</ul>
+<h3 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3045526">False Discovery Rate Control and Statistical Quality Assessment of Annotators in Crowdsourced Ranking</a></strong><br>Qianqian Xu, Jiechao Xiong, Xiaochun Cao, and Yuan Yao. False Discovery Rate Control and Statistical Quality Assessment of Annotators in Crowdsourced Ranking. International Conference on Machine Learning (ICML), 1282–1291, 2016. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ICML2016/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ICML2016/tree/master/code">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2964298">Parsimonious Mixed-Effects HodgeRank for Crowdsourced Preference Aggregation</a></strong><br>Qianqian Xu, Jiechao Xiong, Xiaochun Cao, and Yuan Yao. Parsimonious Mixed-Effects HodgeRank for Crowdsourced Preference Aggregation. ACM Conference on Multimedia (ACM MM), 841–850, 2016. (Full paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/blob/master/conference%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/tree/master/code">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S1063520316000300">Analysis of crowdsourced sampling strategies for HodgeRank with sparse random graphs</a></strong><br>Braxton Osting, Jiechao Xiong, Qianqian Xu, and Yuan Yao. Analysis of crowdsourced sampling strategies for HodgeRank with sparse random graphs. Applied and Computational Harmonic Analysis (ACHA), 41(2): 540–560, 2016. [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACHA2016/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACHA2016/tree/master/code">code</a>]</li>
+</ul>
+<h3 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/6675048">Online HodgeRank on Random Graphs for Crowdsourceable QoE Evaluation</a></strong><br>Qianqian Xu, Jiechao Xiong, Qingming Huang, and Yuan Yao. Online HodgeRank on Random Graphs for Crowdsourceable QoE Evaluation. IEEE Transactions on Multimedia (TMM), 16(2): 373–386, Feb. 2014. (Regular paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/blob/master/journal%20verison.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/PC-IQA%20dataset">dataset</a>]</li>
+</ul>
+<h3 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2502083">Robust Evaluation for Quality of Experience in Crowdsourcing</a></strong><br>Qianqian Xu, Jiechao Xiong, Qingming Huang, and Yuan Yao. Robust Evaluation for Quality of Experience in Crowdsourcing. ACM Conference on Multimedia (ACM MM), 43–52, 2013. (Full paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/tree/master/PC-IQA%20dataset">PC-IQA dataset</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/tree/master/PC-VQA%20dataset">PC-VQA dataset</a>]</li>
+</ul>
+<h3 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2393400">Online Crowdsourcing Subjective Image Quality Assessment</a></strong><br>Qianqian Xu, Qingming Huang and Yuan Yao. Online Crowdsourcing Subjective Image Quality Assessment. ACM Conference on Multimedia (ACM MM), 359–368, 2012. (Full paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/blob/master/conference%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/PC-IQA%20dataset">dataset</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/6170000">HodgeRank on Random Graphs for Subjective Video Quality Assessment</a></strong><br>Qianqian Xu, Qingming Huang, Tingting Jiang, Bowei Yan, Weisi Lin and Yuan Yao. HodgeRank on Random Graphs for Subjective Video Quality Assessment. IEEE Transactions on Multimedia (TMM), 14(3): 844–857, Jun. 2012. (Regular paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/blob/master/journal%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/PC-VQA%20dataset">dataset</a>]</li>
+</ul>
+<h3 id="2011"><a href="#2011" class="headerlink" title="2011"></a>2011</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2072350">Random Partial Paired Comparison for Subjective Video Quality Assessment via HodgeRank</a></strong><br>Qianqian Xu, Tingting Jiang, Yuan Yao, Qingming Huang, Bowei Yan and Weisi Lin. Random Partial Paired Comparison for Subjective Video Quality Assessment via HodgeRank. ACM Conference on Multimedia (ACM MM), 393–402, 2011. (Full paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/blob/master/conference%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/PC-VQA%20dataset">dataset</a>]</li>
+</ul>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Qianqian Xu" />
+            
+              <p class="site-author-name" itemprop="name">Qianqian Xu</p>
+              <p class="site-description motion-element" itemprop="description">Associate Professor,<br>Institute of Computing Technology, Chinese Academy of Sciences</p>
+          </div>
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/qianqianxu010" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;qianqianxu010" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-github&quot;&gt;&lt;&#x2F;i&gt;GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xuqianqian@ict.ac.cn" title="E-Mail &amp;rarr; mailto:xuqianqian@ict.ac.cn" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-envelope&quot;&gt;&lt;&#x2F;i&gt;E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://scholar.google.com.hk/citations?user=MjifS2MAAAAJ&hl=zh-CN" title="GoogleScholar &amp;rarr; https:&#x2F;&#x2F;scholar.google.com.hk&#x2F;citations?user&#x3D;MjifS2MAAAAJ&amp;hl&#x3D;zh-CN" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-google&quot;&gt;&lt;&#x2F;i&gt;GoogleScholar</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://dblp.uni-trier.de/pers/hd/x/Xu:Qianqian" title="DBLP &amp;rarr; https:&#x2F;&#x2F;dblp.uni-trier.de&#x2F;pers&#x2F;hd&#x2F;x&#x2F;Xu:Qianqian" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-compass&quot;&gt;&lt;&#x2F;i&gt;DBLP</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2020"><span class="nav-number">1.</span> <span class="nav-text">2020</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2019"><span class="nav-number">2.</span> <span class="nav-text">2019</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018"><span class="nav-number">3.</span> <span class="nav-text">2018</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2017"><span class="nav-number">4.</span> <span class="nav-text">2017</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2016"><span class="nav-number">5.</span> <span class="nav-text">2016</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2014"><span class="nav-number">6.</span> <span class="nav-text">2014</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2013"><span class="nav-number">7.</span> <span class="nav-text">2013</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2012"><span class="nav-number">8.</span> <span class="nav-text">2012</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2011"><span class="nav-number">9.</span> <span class="nav-text">2011</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qianqian Xu</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
