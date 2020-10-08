@@ -1850,7 +1850,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0aeeff;
+  background: #366953;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2123,13 +2123,8 @@ pre .javascript .function {
     transform: scale(1.1);
   }
 }
-i.fa,
-i.far,
-i.fas {
-  font-family: FontAwesome, "Font Awesome 5 Free" !important;
-}
-i.fab {
-  font-family: "Font Awesome 5 Brands" !important;
+.fa {
+  font-family: FontAwesome !important;
 }
 .local-search-pop-overlay {
   position: fixed;
