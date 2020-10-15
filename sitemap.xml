@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qianqianxu010.github.io/publications/index.html</loc>
+    
+    <lastmod>2020-10-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qianqianxu010.github.io/members/index.html</loc>
     
     <lastmod>2020-10-05</lastmod>
@@ -9,16 +16,9 @@
   </url>
   
   <url>
-    <loc>https://qianqianxu010.github.io/publications/index.html</loc>
-    
-    <lastmod>2019-12-16</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://qianqianxu010.github.io/hello-world/</loc>
     
-    <lastmod>2019-11-11</lastmod>
+    <lastmod>2020-07-10</lastmod>
     
   </url>
   
@@ -39,7 +39,7 @@
 
   <url>
     <loc>https://qianqianxu010.github.io/</loc>
-    <lastmod>2020-10-08</lastmod>
+    <lastmod>2020-10-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
