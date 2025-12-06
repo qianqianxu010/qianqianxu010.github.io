@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ajZK9uLUk8P_3aC1qEXbocD7aZUZOlZeL3yisIow9ko" />
+
+
+
+  <meta name="msvalidate.01" content="293C974A486AEC99FF7AFA48F0B63338" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.proxy.ustclug.org/css?family=Lato:300,300italic,400,400italic,700,700italic|Georgia:300,300italic,400,400italic,700,700italic|Georgia:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32px.ico?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16px.ico?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="2026 HiGFA: Hierarchical Guidance for Fine-grained Data Augmentation with Diffusion ModelsZhiguang Lu, Qianqian Xu, Peisong Wen, Siran Dai, Qingming Huang. HiGFA: Hierarchical Guidance for Fine-graine">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Publications">
+<meta property="og:url" content="https://qianqianxu010.github.io/publications/index.html">
+<meta property="og:site_name" content="Qianqian Xu&#39;s Homepage">
+<meta property="og:description" content="2026 HiGFA: Hierarchical Guidance for Fine-grained Data Augmentation with Diffusion ModelsZhiguang Lu, Qianqian Xu, Peisong Wen, Siran Dai, Qingming Huang. HiGFA: Hierarchical Guidance for Fine-graine">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-11-20T07:57:49.000Z">
+<meta property="article:modified_time" content="2025-12-06T14:16:07.182Z">
+<meta property="article:author" content="Qianqian Xu">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+  <link rel="canonical" href="https://qianqianxu010.github.io/publications/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Publications | Qianqian Xu's Homepage</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qianqian Xu's Homepage</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Professor at ICT, CAS</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-publications menu-item-active">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/publications/" rel="section"><i class="menu-item-icon fa fa-fw fa-file"></i>Publications</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-awards">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/awards/" rel="section"><i class="menu-item-icon fa fa-fw fa-trophy"></i>Honors & Awards</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-services">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/services/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i>Academic Services</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-members">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/members/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i>Current Team Members</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-中文版">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://vipl.ict.ac.cn/people/qqxu/" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-language"></i>中文版</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+          
+          <div class="content-inner"></div>
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h2 class="post-title" itemprop="name headline">Publications</h2>
+
+<div class="post-meta">
+  
+  
+
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <h3 id="2026"><a href="#2026" class="headerlink" title="2026"></a>2026</h3><ul>
+<li><strong>HiGFA: Hierarchical Guidance for Fine-grained Data Augmentation with Diffusion Models</strong><br>Zhiguang Lu, Qianqian Xu, Peisong Wen, Siran Dai, Qingming Huang. HiGFA: Hierarchical Guidance for Fine-grained Data Augmentation with Diffusion Models. AAAI Conference on Artificial Intelligence (AAAI), 2026. (Accepted) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2511.12547">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/ZhiguangLuu/HiGFA">code</a>] </li>
+<li><strong>Quantifying the Potential to Escape Filter Bubbles: A Behavior-Aware Measure via Contrastive Simulation</strong><br>Difu Feng, Qianqian Xu, Zitai Wang, Cong Hua, Zhiyong Yang, Qingming Huang. Quantifying the Potential to Escape Filter Bubbles: A Behavior-Aware Measure via Contrastive Simulation. AAAI Conference on Artificial Intelligence (AAAI), 2026. (Accepted) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2512.03067">pdf</a>]</li>
+<li><strong>TuckA: Hierarchical Compact Tensor Experts for Efficient Fine-Tuning</strong><br>Qifeng Lei, Zhiyong Yang, Qianqian Xu, Cong Hua, Peisong Wen, Qingming Huang. TuckA: Hierarchical Compact Tensor Experts for Efficient Fine-Tuning. AAAI Conference on Artificial Intelligence (AAAI), 2026. (Accepted) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2511.06859">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/LQF39466/TuckA">code</a>] </li>
+</ul>
+<h3 id="2025"><a href="#2025" class="headerlink" title="2025"></a>2025</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/11160674">A Unified Perspective for Loss-Oriented Imbalanced Learning via Localization</a></strong><br>Zitai Wang, Qianqian Xu, Zhiyong Yang, Zhikang Xu, Linchao Zhang, Xiaochun Cao, and Qingming Huang. A Unified Perspective for Loss-Oriented Imbalanced Learning via Localization. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 48(1): 639-656, Jan. 2026. <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2310.04752">pdf</a> [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/DDC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/11176151">Semantic Concentration for Self-Supervised Dense Representations Learning</a></strong><br>Peisong Wen, Qianqian Xu, Siran Dai, Runmin Cong, and Qingming Huang. Semantic Concentration for Self-Supervised Dense Representations Learning. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025. (Accepted, DOI: 10.1109/TPAMI.2025.3609758) [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2509.09429">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/KID-7391/CoTAP">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/11164475">Towards Size-invariant Salient Object Detection: A Generic Evaluation and Optimization Approach</a></strong><br>Shilong Bao, Qianqian Xu, Feiran Li, Boyu Han, Zhiyong Yang, Xiaochun Cao, and Qingming Huang. Towards Size-invariant Salient Object Detection: A Generic Evaluation and Optimization Approach. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025. (Accepted, DOI: 10.1109/TPAMI.2025.3609882) [<a target="_blank" rel="noopener" href="https://www.arxiv.org/abs/2509.15573">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Ferry-Li/SI-SOD">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10904855">AUCPro: AUC-Oriented Provable Robustness Learning</a></strong><br>Shilong Bao, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao, and Qingming Huang. AUCPro: AUC-Oriented Provable Robustness Learning. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 47(6): 4579-4596, Jun. 2025. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10904855">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/AUCPro">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/11268965">Closing the Approximation Gap of Partial AUC Optimization: A Tale of Two Formulations</a></strong><br>Yangbangyan Jiang, Qianqian Xu, Huiyang Shao, Zhiyong Yang, Shilong Bao, Xiaochun Cao, and Qingming Huang. Closing the Approximation Gap of Partial AUC Optimization: A Tale of Two Formulations. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025. (Accepted, DOI: 10.1109/TPAMI.2025.3637063)</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/11277400">Cost-aware AUC Optimization via Adaptive Kernel Density Estimation</a></strong><br>Peisong Wen, Qianqian Xu, Zhiyong Yang, Huiyang Shao, Linchao Zhang, and Qingming Huang. Cost-aware AUC Optimization via Adaptive Kernel Density Estimation. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025. (Accepted, DOI: 10.1109/TPAMI.2025.3640236)</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/11151822">SAQE: Complex Logical Query Answering via Semantic-Aware Representation Learning</a></strong><br>Zongsheng Cao, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao, and Qingming Huang. SAQE: Complex Logical Query Answering via Semantic-Aware Representation Learning. IEEE Transactions on Knowledge and Data Engineering (TKDE), 37(11): 6651-6665, Nov. 2025. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/11151822">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Worker-ZS/SAQE">code</a>]</li>
+<li><strong>LightFair: Towards an Efficient Alternative for Fair T2I Diffusion via Debiasing Pre-trained Text Encoders</strong><br>Boyu Han, Qianqian Xu, Shilong Bao, Zhiyong Yang, Kangli Zi, and Qingming Huang. LightFair: Towards an Efficient Alternative for Fair T2I Diffusion via Debiasing Pre-trained Text Encoders. Annual Conference on Neural Information Processing Systems (NeurIPS), 2025. (Accepted) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2509.23639">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/boyuh/LightFair">code</a>]</li>
+<li><strong>Exploring Performance Degradation in Dense Tasks for Self-supervised Learning</strong><br>Siran Dai, Qianqian Xu, Peisong Wen, Yang Liu, and Qingming Huang. Exploring Performance Degradation in Dense Tasks for Self-supervised Learning. Annual Conference on Neural Information Processing Systems (NeurIPS), 2025. (Accepted)  [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2510.17299">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/EldercatSAM/SSL-Degradation">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v267/li25dk.html">Focal-SAM: Focal Sharpness-Aware Minimization for Long-Tailed Classification</a></strong><br>Sicong Li, Qianqian Xu, Zhiyong Yang, Zitai Wang, Linchao Zhang, Xiaochun Cao, Qingming Huang. Focal-SAM: Focal Sharpness-Aware Minimization for Long-Tailed Classification. International Conference on Machine Learning (ICML), 36624-36651, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2505.01660">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/scongl/Focal-SAM">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v267/hua25d.html">OpenworldAUC: Towards Unified Evaluation and Optimization for Open-world Prompt Tuning</a></strong><br>Cong Hua, Qianqian Xu, Zhiyong Yang, Zitai Wang, Shilong Bao, Qingming Huang. OpenworldAUC: Towards Unified Evaluation and Optimization for Open-world Prompt Tuning. International Conference on Machine Learning (ICML), 24975-25020, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2505.05180">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/huacong/OpenworldAUC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v267/li25de.html">One Image is Worth a Thousand Words: A Usability Preservable Text-Image Collaborative Erasing Framework for Diffusion Models</a></strong><br>Feiran Li, Qianqian Xu, Shilong Bao, Zhiyong Yang, Xiaochun Cao, Qingming Huang. One Image is Worth a Thousand Words: A Usability Preservable Text-Image Collaborative Erasing Framework for Diffusion Models. International Conference on Machine Learning (ICML), 36486-36529, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2505.11131">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Ferry-Li/Co-Erasing">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v267/qin25i.html">MixBridge: Heterogeneous Image-to-Image Backdoor Attack through Mixture of Schrödinger Bridges</a></strong><br>Shixi Qin, Zhiyong Yang, Shilong Bao, Shi Wang, Qianqian Xu, Qingming Huang. MixBridge: Heterogeneous Image-to-Image Backdoor Attack through Mixture of Schrödinger Bridges. International Conference on Machine Learning (ICML), 50397-50434, 2025. [<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2505.08809">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qsx830/MixBridge">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v267/wang25dz.html">ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via α-β-Divergence</a></strong><br>Guanghui Wang, Zhiyong Yang, Zitai Wang, Shi Wang, Qianqian Xu, Qingming Huang. ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via α-β-Divergence. International Conference on Machine Learning (ICML), 65167-65212, 2025. (Oral) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2505.04560">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/ghwang-s/abkd">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v267/pei25b.html">Diffusion-based Adversarial Purification from the Perspective of the Frequency Domain</a></strong><br>Gaozheng Pei, Ke Ma, Yingfei Sun, Qianqian Xu, Qingming Huang. Diffusion-based Adversarial Purification from the Perspective of the Frequency Domain. International Conference on Machine Learning (ICML), 48679-48698, 2025. (Spotlight) [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2505.01267">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/GaozhengPei/FreqPure">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v267/yang25s.html">Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs</a></strong><br>Haoming Yang, Ke Ma, Xiaojun Jia, Yingfei Sun, Qianqian Xu, Qingming Huang. Cannot See the Forest for the Trees: Invoking Heuristics and Biases to Elicit Irrational Choices of LLMs. International Conference on Machine Learning (ICML), 70888-70913, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2505.02862">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/longlong-www/ICRT">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2025/html/Liu_When_the_Future_Becomes_the_Past_Taming_Temporal_Correspondence_for_CVPR_2025_paper.html">When the Future Becomes the Past: Taming Temporal Correspondence for Self-supervised Video Representation Learning</a></strong><br>Yang Liu, Qianqian Xu, Peisong Wen, Siran Dai, Qingming Huang. When the Future Becomes the Past: Taming Temporal Correspondence for Self-supervised Video Representation Learning. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 24033–24044, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2503.15096">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/yafeng19/T-CORE">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2025/html/Pei_Divide_and_Conquer_Heterogeneous_Noise_Integration_for_Diffusion-based_Adversarial_Purification_CVPR_2025_paper.html">Divide and Conquer: Heterogeneous Noise Integration for Diffusion-based Adversarial Purification</a></strong><br>Gaozheng Pei, Shaojie Lyu, Gong Chen, Ke Ma, Qianqian Xu, Yingfei Sun, Qingming Huang. Divide and Conquer: Heterogeneous Noise Integration for Diffusion-based Adversarial Purification. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 29268–29277, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2503.01407">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/GaozhengPei/Purification">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/34122">SSE-SAM: Balancing Head and Tail Classes Gradually through Stage-Wise SAM</a></strong><br>Xingyu Lyu, Qianqian Xu, Zhiyong Yang, Shaojie Lyu, Qingming Huang. SSE-SAM: Balancing Head and Tail Classes Gradually through Stage-Wise SAM. AAAI Conference on Artificial Intelligence (AAAI), 19278–19286, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2412.13715">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Zemdalk/SSE-SAM">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/34112">Bidirectional Logits Tree: Pursuing Granularity Reconcilement in Fine-Grained Classification</a></strong><br>Zhiguang Lu, Qianqian Xu, Shilong Bao, Zhiyong Yang, Qingming Huang. Bidirectional Logits Tree: Pursuing Granularity Reconcilement in Fine-Grained Classification. AAAI Conference on Artificial Intelligence (AAAI), 19189–19197, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2412.12782">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/ZhiguangLuu/BiLT">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/33375">EDGE: Unknown-aware Multi-label Learning by Energy Distribution Gap Expansion</a></strong><br>Yuchen Sun, Qianqian Xu, Zitai Wang, Zhiyong Yang, Junwei He. EDGE: Unknown-aware Multi-label Learning by Energy Distribution Gap Expansion. AAAI Conference on Artificial Intelligence (AAAI), 12613–12621, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2412.07499">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Yuchen-Sunflower/EDGE">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/32048">Exploring Query Efficient Data Generation towards Data-free Model Stealing in Hard Label Setting</a></strong><br>Gaozheng Pei, Shaojie Lyu, Ke Ma, Pinci Yang, Qianqian Xu, Yingfei Sun. Exploring Query Efficient Data Generation towards Data-free Model Stealing in Hard Label Setting. AAAI Conference on Artificial Intelligence (AAAI), 667–675, 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2412.15276">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/GaozhengPei/QEDG">code</a>]</li>
+</ul>
+<h3 id="2024"><a href="#2024" class="headerlink" title="2024"></a>2024</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10564181/">Sequential Manipulation against Rank Aggregation: Theory and Algorithm</a></strong><br>Ke Ma, Qianqian Xu, Jinshan Zeng, Wei Liu, Xiaochun Cao, Yingfei Sun, and Qingming Huang. Sequential Manipulation against Rank Aggregation: Theory and Algorithm. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 46(12): 9353–9370, Jun. 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2407.01916">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/Sequential-Manipulation-Against-Rank-Aggregation">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10553349">Improved Diversity-Promoting Collaborative Metric Learning for Recommendation</a></strong><br>Shilong Bao, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao, and Qingming Huang. Improved Diversity-Promoting Collaborative Metric Learning for Recommendation. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 46(12): 9004–9022, Jun. 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.01012">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/LibCML">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/10422838/">Algorithm-Dependent Generalization of AUPRC Optimization: Theory and Algorithm</a></strong><br>Peisong Wen, Qianqian Xu, Zhiyong Yang, Yuan He and Qingming Huang. Algorithm-Dependent Generalization of AUPRC Optimization: Theory and Algorithm. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 46(7): 5062–5079, Jul. 2024. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/10422838">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/KID-7391/SOPRC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/10296027">Mitigating Confounding Bias in Practical Recommender Systems with Partially Inaccessible Exposure Status</a></strong><br>Tianwei Cao, Qianqian Xu, Zhiyong Yang and Qingming Huang. Mitigating Confounding Bias in Practical Recommender Systems with Partially Inaccessible Exposure Status. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 46(2): 957–974, Feb. 2024. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/10296027">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/caotianwei/debias_rec_2023">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10810273">Practically Unbiased Pairwise Loss for Recommendation with Implicit Feedback</a></strong><br>Tianwei Cao, Qianqian Xu, Zhiyong Yang, Zhanyu Ma and Qingming Huang. Practically Unbiased Pairwise Loss for Recommendation with Implicit Feedback. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 47(4): 2460–2474, Apr. 2025. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10810273">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/caotianwei/pair-rec-2024">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://link.springer.com/article/10.1007/s11263-024-02157-w">Top-K Pairwise Ranking: Bridging the Gap Among Ranking-Based Measures for Multi-Label Classification</a></strong><br>Zitai Wang, Qianqian Xu, Zhiyong Yang, Peisong Wen, Yuan He, Xiaochun Cao, Qingming Huang. Top-K Pairwise Ranking: Bridging the Gap Among Ranking-Based Measures for Multi-Label Classification. International Journal of Computer Vision (IJCV), 133(1): 211–253, Jan. 2025. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2407.06709.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/TKPR">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10729738">Enhancing Sample Utilization in Noise-robust Deep Metric Learning with Subgroup-based Positive-pair Selection</a></strong><br>Zhipeng Yu, Qianqian Xu, Yangbangyan Jiang, Yingfei Sun, and Qingming Huang. Enhancing Sample Utilization in Noise-robust Deep Metric Learning with Subgroup-based Positive-pair Selection. IEEE Transactions on Image Processing (TIP), 33:6083–6097, Oct. 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2501.11063">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/smuelpeng/SGPS-NoiseFreeDML">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v235/yang24af.html">Harnessing Hierarchical Label Distribution Variations in Test Agnostic Long-tail Recognition</a></strong><br>Zhiyong Yang, Qianqian Xu, Zitai Wang, Sicong Li, Boyu Han, Shilong Bao, Xiaochun Cao, Qingming Huang. Harnessing Hierarchical Label Distribution Variations in Test Agnostic Long-tail Recognition. International Conference on Machine Learning (ICML), 56624–56664, 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2405.07780.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/scongl/DirMixE">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v235/li24bx.html">Size-invariance Matters: Rethinking Metrics and Losses for Imbalanced Multi-object Salient Object Detection</a></strong><br>Feiran Li, Qianqian Xu, Shilong Bao, Zhiyong Yang, Runmin Cong, Xiaochun Cao, Qingming Huang. Size-invariance Matters: Rethinking Metrics and Losses for Imbalanced Multi-object Salient Object Detection. International Conference on Machine Learning (ICML), 28989–29021, 2024. (Spotlight) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2405.09782.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Ferry-Li/SI-SOD">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v235/hua24a.html">ReconBoost: Boosting Can Achieve Modality Reconcilement</a></strong><br>Cong Hua, Qianqian Xu, Shilong Bao, Zhiyong Yang, Qingming Huang. ReconBoost: Boosting Can Achieve Modality Reconcilement. International Conference on Machine Learning (ICML), 19573–19597, 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2405.09321.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/huacong/ReconBoost">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v235/liu24l.html">ESNet: Evolution and Succession Network for High-Resolution Salient Object Detection</a></strong><br>Hongyu Liu, Runmin Cong, Hua Li, Qianqian Xu, Qingming Huang, Wei Zhang. ESNet: Evolution and Succession Network for High-Resolution Salient Object Detection. International Conference on Machine Learning (ICML), 30892–30907, 2024. [<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=SERrqPDvoY">pdf</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper_files/paper/2024/hash/633780c1344d0c95e4d2dd3431fe08d9-Abstract-Conference.html">Not All Diffusion Model Activations Have Been Evaluated as Discriminative Features</a></strong><br>Benyuan Meng, Qianqian Xu, Zitai Wang, Xiaochun Cao, Qingming Huang. Not All Diffusion Model Activations Have Been Evaluated as Discriminative Features. Annual Conference on Neural Information Processing Systems (NeurIPS), 55141–55177, 2024. (Spotlight) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2410.03558.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Darkbblue/generic-diffusion-feature">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper_files/paper/2024/hash/21c86d5b10cdc28664ccdadf0a29065a-Abstract-Conference.html">Suppress Content Shift: Better Diffusion Features via Off-the-Shelf Generation Techniques</a></strong><br>Benyuan Meng, Qianqian Xu, Zitai Wang, Zhiyong Yang, Xiaochun Cao, Qingming Huang. Suppress Content Shift: Better Diffusion Features via Off-the-Shelf Generation Techniques. Annual Conference on Neural Information Processing Systems (NeurIPS), 18910–18939, 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2410.06719.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Darkbblue/diffusion-content-shift">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper_files/paper/2024/hash/e574db41163e700545ff4114f96b3d7a-Abstract-Conference.html">AUCSeg: AUC-oriented Pixel-level Long-tail Semantic Segmentation</a></strong><br>Boyu Han, Qianqian Xu, Zhiyong Yang, Shilong Bao, Peisong Wen, Yangbangyan Jiang, Qingming Huang. AUCSeg: AUC-oriented Pixel-level Long-tail Semantic Segmentation. Annual Conference on Neural Information Processing Systems (NeurIPS), 126863–126907, 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2409.20398.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/boyuh/AUCSeg">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/28691">ADA-GAD: Anomaly-Denoised Autoencoders for Graph Anomaly Detection</a></strong><br>Junwei He, Qianqian Xu, Yangbangyan Jiang, Zitai Wang, Qingming Huang. ADA-GAD: Anomaly-Denoised Autoencoders for Graph Anomaly Detection. AAAI Conference on Artificial Intelligence (AAAI), 8481–8489, 2024. [<a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/28691">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jweihe/ADA-GAD">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3664647.3681110">Not All Pairs are Equal: Hierarchical Learning for Average-Precision-Oriented Video Retrieval</a></strong><br>Yang Liu, Qianqian Xu, Peisong Wen, Siran Dai, Qingming Huang. Not All Pairs are Equal: Hierarchical Learning for Average-Precision-Oriented Video Retrieval. ACM Conference on Multimedia (ACM MM),  3828–3837, 2024. (Honourable Mention Award) [<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2407.15566.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/yafeng19/HAP-VR">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3664647.3681118">HGOE: Hybrid External and Internal Graph Outlier Exposure for Graph Out-of-Distribution Detection</a></strong><br>Junwei He, Qianqian Xu, Yangbangyan Jiang, Zitai Wang, Yuchen Sun, Qingming Huang. HGOE: Hybrid External and Internal Graph Outlier Exposure for Graph Out-of-Distribution Detection. ACM Conference on Multimedia (ACM MM), 1544–1553, 2024. [<a target="_blank" rel="noopener" href="http://arxiv.org/abs/2407.21742.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jweihe/HGOE">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3664647.3681125">Regularized Contrastive Partial Multi-view Outlier Detection</a></strong><br>Yijia Wang, Qianqian Xu, Yangbangyan Jiang, Siran Dai, Qingming Huang. Regularized Contrastive Partial Multi-view Outlier Detection. ACM Conference on Multimedia (ACM MM), 8711–8720, 2024. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2408.07819.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/180400518/RCPMOD">code</a>]</li>
+</ul>
+<h3 id="2023"><a href="#2023" class="headerlink" title="2023"></a>2023</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10214340">Revisiting AUC-oriented Adversarial Training with Loss-Agnostic Perturbations</a></strong><br>Zhiyong Yang, Qianqian Xu, Wenzheng Hou, Shilong Bao, Yuan He, Xiaochun Cao and Qingming Huang. Revisiting AUC-oriented Adversarial Training with Loss-Agnostic Perturbations. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(12): 15494–15511, Dec. 2023. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10214340">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/AUC-Oriented-Adversarial-Training">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10214222">AUC-Oriented Domain Adaptation: From Theory to Algorithm</a></strong><br>Zhiyong Yang, Qianqian Xu, Shilong Bao, Peisong Wen, Yuan He, Xiaochun Cao and Qingming Huang. AUC-Oriented Domain Adaptation: From Theory to Algorithm. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(12): 14161–14174, Dec. 2023. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10214222">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/AUC-Oriented-Domain-Adaptation">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10264106">Positive-Unlabeled Learning with Label Distribution Alignment</a></strong><br>Yangbangyan Jiang, Qianqian Xu, Yunrui Zhao, Zhiyong Yang, Peisong Wen, Xiaochun Cao, and Qingming Huang. Positive-Unlabeled Learning with Label Distribution Alignment. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(12): 15345–15363, Dec. 2023. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10264106">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/PULDA">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v202/peifeng23a.html">Feature Directions Matters: Long-Tailed Learning via Rotated Balanced Representation</a></strong><br>Peifeng Gao, Qianqian Xu, Peisong Wen, Zhiyong Yang, Huiyang Shao and Qingming Huang. Feature Directions Matters: Long-Tailed Learning via Rotated Balanced Representation. International Conference on Machine Learning (ICML), 27542–27563, 2023. [<a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v202/peifeng23a/peifeng23a.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://gitee.com/gaopeifeng/rbl">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/973a0f50d43cf99118cdab456edcacda-Abstract-Conference.html">A Unified Generalization Analysis of Re-Weighting and Logit-Adjustment for Imbalanced Learning</a></strong><br>Zitai Wang, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao and Qingming Huang. A Unified Generalization Analysis of Re-Weighting and Logit-Adjustment for Imbalanced Learning. Annual Conference on Neural Information Processing Systems (NeurIPS), 48417–48430, 2023. (Spotlight) [<a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2023/file/973a0f50d43cf99118cdab456edcacda-Paper-Conference.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/DDC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/38687a6a01f127d6db92561508a225b7-Abstract-Conference.html">Weighted ROC Curve in Cost Space: Extending AUC to Cost-Sensitive Learning</a></strong><br>Huiyang Shao, Qianqian Xu, Zhiyong Yang, Peisong Wen, Gao Peifeng, Qingming Huang. Weighted ROC Curve in Cost Space: Extending AUC to Cost-Sensitive Learning. Annual Conference on Neural Information Processing Systems (NeurIPS), 17357–17368, 2023.  [<a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2023/file/38687a6a01f127d6db92561508a225b7-Paper-Conference.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Shaocr/WAUC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c086821724b99f4c756648bb0f165db-Abstract-Conference.html">DRAUC: An Instance-wise Distributionally Robust AUC Optimization Framework</a></strong><br>Siran Dai, Qianqian Xu, Zhiyong Yang, Xiaochun Cao, Qingming Huang. DRAUC: An Instance-wise Distributionally Robust AUC Optimization Framework. Annual Conference on Neural Information Processing Systems (NeurIPS), 44658–44670, 2023. [<a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2023/file/8c086821724b99f4c756648bb0f165db-Paper-Conference.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/EldercatSAM/DRAUC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/25926">Towards Decision-Friendly AUC: Learning Multi-Classifier with AUCµ</a></strong><br>Peifeng Gao, Qianqian Xu, Peisong Wen, Huiyang Shao, Yuan He and Qingming Huang. Towards Decision-Friendly AUC: Learning Multi-Classifier with AUCµ. AAAI Conference on Artificial Intelligence (AAAI), 7633–7641, 2023. [<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=V_AzkgoXB5">pdf</a>] [<a target="_blank" rel="noopener" href="https://gitee.com/gaopeifeng/aucmu">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/ICCV2023/html/Shao_Building_Bridge_Across_the_Time_Disruption_and_Restoration_of_Murals_ICCV_2023_paper.html">Building Bridge Across the Time: Disruption and Restoration of Murals In the Wild</a></strong><br>Huiyang Shao, Qianqian Xu, Peisong Wen, Gao Peifeng, Zhiyong Yang and Qingming Huang. Building Bridge Across the Time: Disruption and Restoration of Murals In the Wild. International Conference on Computer Vision (ICCV), 20259–20269, 2023. [<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Shao_Building_Bridge_Across_the_Time_Disruption_and_Restoration_of_Murals_ICCV_2023_paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Shaocr/Building-Bridge-Across-the-Time-Disruption-and-Restoration-of-Murals-In-the-Wild/tree/main">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3581783.3611778">PSNEA: Pseudo-Siamese Network for Entity Alignment between Multi-modal Knowledge Graphs</a></strong><br>Wenxin Ni, Qianqian Xu, Yangbangyan Jiang, Zongsheng Cao, Xiaochun Cao and Qingming Huang. PSNEA: Pseudo-Siamese Network for Entity Alignment between Multi-modal Knowledge Graphs. ACM Conference on Multimedia (ACM MM), 3489–3497, 2023. [<a target="_blank" rel="noopener" href="https://dl.acm.org/doi/pdf/10.1145/3581783.3611778">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/PSNEA">code</a>] </li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3581783.3611846">When Measures are Unreliable: Imperceptible Adversarial Perturbations toward Top-k Multi-Label Learning</a></strong><br>Yuchen Sun, Qianqian Xu, Zitai Wang and Qingming Huang. When Measures are Unreliable: Imperceptible Adversarial Perturbations toward Top-k Multi-Label Learning. ACM Conference on Multimedia (ACM MM), 1515–1526, 2023. (Oral) [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2309.00007">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Yuchen-Sunflower/TKMIA">code</a>]</li>
+</ul>
+<h3 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9944159/">Rethinking Label Flipping Attack: From Sample Masking to Sample Thresholding</a></strong><br>Qianqian Xu, Zhiyong Yang, Yunrui Zhao, Xiaochun Cao and Qingming Huang. Rethinking Label Flipping Attack: From Sample Masking to Sample Thresholding. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(6): 7668–7685, Jun. 2023. [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9944159">pdf</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9804230/">Optimizing Two-way Partial AUC with an End-to-end Framework</a></strong><br>Zhiyong Yang, Qianqian Xu, Shilong Bao, Yuan He, Xiaochun Cao and Qingming Huang. Optimizing Two-way Partial AUC with an End-to-end Framework. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(8): 10228-10246, Aug. 2023. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2206.11655.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/XCurve">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9830042">A Tale of HodgeRank and Spectral Method: Target Attack Against Rank Aggregation is the Fixed Point of Adversarial Game</a></strong><br>Ke Ma, Qianqian Xu, Jinshan Zeng, Guorong Li, Xiaochun Cao and Qingming Huang. A Tale of HodgeRank and Spectral Method: Target Attack Against Rank Aggregation is the Fixed Point of Adversarial Game. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(4): 4090–4108, Apr. 2023. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2209.05742.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/Target_Attack_Rank_Aggregation">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9861690">Optimizing Partial Area Under the Top-k Curve: Theory and Practice</a></strong><br>Zitai Wang, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao and Qingming Huang. Optimizing Partial Area Under the Top-k Curve: Theory and Practice. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(4): 5053–5069, Apr. 2023. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2209.01398.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/AUTKC-optimization">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9897005/">MaxMatch: Semi-Supervised Learning with Worst-Case Consistency</a></strong><br>Yangbangyan Jiang, Xiaodan Li, Yuefeng Chen, Yuan He, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. MaxMatch: Semi-Supervised Learning with Worst-Case Consistency. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(5): 5970–5987, May 2023. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2209.12611">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/MaxMatch">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.mlr.press/v162/hou22b/hou22b.pdf">AdAUC: End-to-end Adversarial AUC Optimization Against Long-tail Problems</a></strong><br>Wenzheng Hou, Qianqian Xu, Zhiyong Yang, Shilong Bao, Yuan He and Qingming Huang. AdAUC: End-to-end Adversarial AUC Optimization Against Long-tail Problems. International Conference on Machine Learning (ICML), 8903–8925, 2022. [<a target="_blank" rel="noopener" href="http://arxiv.org/pdf/2206.12169.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/AUC-Oriented-Adversarial-Training">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b5dc49f44db2fadc5c4d717c57f4a424-Abstract-Conference.html">Exploring the Algorithm-Dependent Generalization of AUPRC Optimization with List Stability</a></strong><br>Peisong Wen, Qianqian Xu, Zhiyong Yang, Yuan He and Qingming Huang. Exploring the Algorithm-Dependent Generalization of AUPRC Optimization with List Stability. Annual Conference on Neural Information Processing Systems (NeurIPS), 28335–28349, 2022. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2209.13262">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/KID-7391/SOPRC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/9f73d65a4186198152357be871345771-Abstract-Conference.html">OpenAUC: Towards AUC-Oriented Open-Set Recognition</a></strong><br>Zitai Wang, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao and Qingming Huang. OpenAUC: Towards AUC-Oriented Open-Set Recognition. Annual Conference on Neural Information Processing Systems (NeurIPS), 25033–25045, 2022. (Spotlight) [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2210.13458">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/OpenAUC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/109cf25cbc36037deecdbeabfa199956-Abstract-Conference.html">The Minority Matters: A Diversity-Promoting Collaborative Metric Learning Algorithm</a></strong><br>Shilong Bao, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao and Qingming Huang. The Minority Matters: A Diversity-Promoting Collaborative Metric Learning Algorithm. Annual Conference on Neural Information Processing Systems (NeurIPS), 2451–2464, 2022. (Oral) [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2209.15292">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/DPCML">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/ffdb280e7c7b4c4af30e04daf5a84b98-Abstract-Conference.html">OTKGE: Multi-modal Knowledge Graph Embeddings via Optimal Transport</a></strong><br>Zongsheng Cao, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao and Qingming Huang. OTKGE: Multi-modal Knowledge Graph Embeddings via Optimal Transport. Annual Conference on Neural Information Processing Systems (NeurIPS), 39090–39102, 2022. [<a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2022/file/ffdb280e7c7b4c4af30e04daf5a84b98-Paper-Conference.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/OTKGE">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/fc9f83d9925e6885e8f1ae1e17b3c44b-Abstract-Conference.html">Asymptotically Unbiased Instance-wise Regularized Partial AUC Optimization: Theory and Algorithm</a></strong><br>Huiyang Shao, Qianqian Xu, Zhiyong Yang, Shilong Bao and Qingming Huang. Asymptotically Unbiased Instance-wise Regularized Partial AUC Optimization: Theory and Algorithm. Annual Conference on Neural Information Processing Systems (NeurIPS), 38667–38679, 2022. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2210.03967">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Shaocr/PAUCI">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2022/html/Zhao_Dist-PU_Positive-Unlabeled_Learning_From_a_Label_Distribution_Perspective_CVPR_2022_paper.html">Dist-PU: Positive-Unlabeled Learning from a Label Distribution Perspective</a></strong><br>Yunrui Zhao, Qianqian Xu, Yangbangyan Jiang, Peisong Wen and Qingming Huang. Dist-PU: Positive-Unlabeled Learning from a Label Distribution Perspective. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 14461–14470, 2022. [<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2022/papers/Zhao_Dist-PU_Positive-Unlabeled_Learning_From_a_Label_Distribution_Perspective_CVPR_2022_paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2022/supplemental/Zhao_Dist-PU_Positive-Unlabeled_Learning_CVPR_2022_supplemental.pdf">supp</a>] [<a target="_blank" rel="noopener" href="https://github.com/Ray-rui/Dist-PU-Positive-Unlabeled-Learning-from-a-Label-Distribution-Perspective">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.aaai.org/AAAI22Papers/AAAI-11284.CaoZ.pdf">Geometry Interaction Knowledge Graph Embeddings</a></strong><br>Zongsheng Cao, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Geometry Interaction Knowledge Graph Embeddings. AAAI Conference on Artificial Intelligence (AAAI), 5521–5529, 2022. [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/GIE/blob/main/GIE.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/GIE">supp&amp;code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.aaai.org/AAAI22Papers/AAAI-5637.CaoZ.pdf">ER: Equivariance Regularizer for Knowledge Graph Completion</a></strong><br>Zongsheng Cao, Qianqian Xu, Zhiyong Yang and Qingming Huang. ER: Equivariance Regularizer for Knowledge Graph Completion. AAAI Conference on Artificial Intelligence (AAAI), 5512–5520, 2022. [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/ER/blob/main/ER.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/ER">supp&amp;code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.ijcai.org/proceedings/2022/0287.pdf">Quaternion Ordinal Embedding</a></strong><br>Wenzheng Hou, Qianqian Xu, Ke Ma, Qianxiu Hao, Qingming Huang. Quaternion Ordinal Embedding. International Joint Conference on Artificial Intelligence (IJCAI), 2066–2072, 2022. [<a target="_blank" rel="noopener" href="https://www.ijcai.org/proceedings/2022/0287.pdf">pdf</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3503161.3548157">Confederated Learning: Going Beyond Centralization</a></strong><br>Zitai Wang, Qianqian Xu, Ke Ma, Xiaochun Cao and Qingming Huang. Confederated Learning: Going Beyond Centralization. ACM Conference on Multimedia (ACM MM), 2939–2947, 2022. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Confederated-Learning/blob/main/mmfp1684-wang.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Confederated-Learning">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Confederated-Learning/blob/main/MM2022_slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3503161.3548256">Pay Attention to Your Positive Pairs: Positive Pair Aware Contrastive Knowledge Distillation</a></strong><br>Zhipeng Yu, Qianqian Xu, Yangbangyan Jiang, Haoyu Qin and Qingming Huang. Pay Attention to Your Positive Pairs: Positive Pair Aware Contrastive Knowledge Distillation. ACM Conference on Multimedia (ACM MM), 5862–5870, 2022. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/smuelpeng/PACKD/blob/main/.github/camera-ready-mmfp2140.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/smuelpeng/PACKD">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3503161.3548118">Recurrent Meta-Learning against Generalized Cold-start problem in CTR Prediction</a></strong><br>Junyu Chen, Qianqian Xu, Zhiyong Yang, Ke Ma, Xiaochun Cao and Qingming Huang. Recurrent Meta-Learning against Generalized Cold-start problem in CTR Prediction. ACM Conference on Multimedia (ACM MM), 2636–2644, 2022. [<a target="_blank" rel="noopener" href="https://github.com/TraceIvan/Recurrent_Meta_Learning_for_CTR/blob/main/document/CTR_paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/TraceIvan/Recurrent_Meta_Learning_for_CTR">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3503161.3548120">A Unified Framework against Topology and Class Imbalance</a></strong><br>Junyu Chen, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. A Unified Framework against Topology and Class Imbalance. ACM Conference on Multimedia (ACM MM), 180–188, 2022. [<a target="_blank" rel="noopener" href="https://github.com/TraceIvan/TOPOAUC/blob/main/document/TOPOAUC_paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/TraceIvan/TOPOAUC">code</a>]</li>
+</ul>
+<h3 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9310271">Not All Samples are Trustworthy: Towards Deep Robust SVP Prediction</a></strong><br>Qianqian Xu, Zhiyong Yang, Yangbangyan Jiang, Xiaochun Cao, Yuan Yao and Qingming Huang. Not All Samples are Trustworthy: Towards Deep Robust SVP Prediction. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 44(6): 3154–3169, Jun. 2022. (Regular paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI21-Not-All-Samples-are-Trustworthy/blob/main/TPAMI21-Xu-camera-ready-whole.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI21-Not-All-Samples-are-Trustworthy">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://link.springer.com/article/10.1007/s11263-021-01438-y">Evaluating Visual Properties via Robust HodgeRank</a></strong><br>Qianqian Xu, Jiechao Xiong, Xiaochun Cao, Qingming Huang and Yuan Yao. Evaluating Visual Properties via Robust HodgeRank. International Journal of Computer Vision (IJCV), 129(5): 1732–1753, Mar. 2021. (Regular paper) [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1408.3467">pdf</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9448491">Poisoning Attack against Estimating from Pairwise Comparisons</a></strong><br>Ke Ma, Qianqian Xu, Jinshan Zeng, Xiaochun Cao and Qingming Huang. Poisoning Attack against Estimating from Pairwise Comparisons. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 44(10): 6393–6408, Oct. 2022. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.01854">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/Poisonging_Attack_Pairwise_Comparison">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9502525/">Learning with Multiclass AUC: Theory and Algorithms</a></strong><br>Zhiyong Yang, Qianqian Xu, Shilong Bao, Xiaochun Cao and Qingming Huang. Learning with Multiclass AUC: Theory and Algorithms. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 44(11): 7747–7763, Nov. 2022. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2107.13171.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/Learning-with-Multiclass-AUC-Theory-and-Algorithms">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9511310/">Meta-Wrapper: Differentiable Wrapping Operator for User Interest Selection in CTR Prediction</a></strong><br>Tianwei Cao, Qianqian Xu, Zhiyong Yang and Qingming Huang. Meta-Wrapper: Differentiable Wrapping Operator for User Interest Selection in CTR Prediction. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 44(11): 8449–8464, Nov. 2022. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2206.14647.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/caotianwei/MWCTR">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9674822">Rethinking Collaborative Metric Learning: Toward an Efficient Alternative without Negative Sampling</a></strong><br>Shilong Bao, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Rethinking Collaborative Metric Learning: Toward an Efficient Alternative without Negative Sampling. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 45(1): 1017–1035, Jan. 2023. [<a target="_blank" rel="noopener" href="https://github.com/statusrank/SFCML/blob/main/SFCML.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/SFCML">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="http://proceedings.mlr.press/v139/yang21k.html">When All We Need is a Piece of the Pie: A Generic Framework for Optimizing Two-way Partial AUC</a></strong><br>Zhiyong Yang, Qianqian Xu, Shilong Bao, Yuan He, Xiaochun Cao and Qingming Huang. When All We Need is a Piece of the Pie: A Generic Framework for Optimizing Two-way Partial AUC. International Conference on Machine Learning (ICML), 11820–11829, 2021. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/statusrank/A-Generic-Framework-for-Optimizing-Two-way-Partial-AUC/blob/main/TPAUC.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/A-Generic-Framework-for-Optimizing-Two-way-Partial-AUC">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/A-Generic-Framework-for-Optimizing-Two-way-Partial-AUC/blob/main/oral_pdf.pdf">slides</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/ICML2021-poster">poster</a>] [<a target="_blank" rel="noopener" href="https://recorder-v3.slideslive.com/#/share?share=42299&s=37ba6bb4-e720-46ae-8d34-363b533d139d">video</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/2021/hash/28267ab848bcf807b2ed53c3a8f8fc8a-Abstract.html">When False Positive is Intolerant: End-to-End Optimization with Low FPR for Multipartite Ranking</a></strong><br>Peisong Wen, Qianqian Xu, Zhiyong Yang, Yuan He and Qingming Huang. When False Positive is Intolerant: End-to-End Optimization with Low FPR for Multipartite Ranking. Annual Conference on Neural Information Processing Systems (NeurIPS), 5025–-5037, 2021. [<a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/2021/file/28267ab848bcf807b2ed53c3a8f8fc8a-Paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/KID-7391/CBA-MR">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/16148">Deep Partial Rank Aggregation for Personalized Attributes</a></strong><br>Qianqian Xu, Zhiyong Yang, Zuyao Chen, Yangbangyan Jiang, Xiaochun Cao, Yuan Yao and Qingming Huang. Deep Partial Rank Aggregation for Personalized Attributes. AAAI Conference on Artificial Intelligence (AAAI), 678–688, 2021. [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI21/blob/main/AAAI21-DeepPartialRank.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI21">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Wen_Seeking_the_Shape_of_Sound_An_Adaptive_Framework_for_Learning_CVPR_2021_paper.pdf">Seeking the Shape of Sound: An Adaptive Framework for Learning Voice-Face Association</a></strong><br>Peisong Wen, Qianqian Xu, Yangbangyan Jiang, Zhiyong Yang, Yuan He and Qingming Huang. Seeking the Shape of Sound: An Adaptive Framework for Learning Voice-Face Association. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 16347–16356, 2021. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2103.07293">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/KID-7391/seeking-the-shape-of-sound">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8918070/">Fast Stochastic Ordinal Embedding with Variance Reduction and Adaptive Step Size</a></strong><br>Ke Ma, Jinshan Zeng, Jiechao Xiong, Qianqian Xu, Xiaochun Cao, Wei Liu and Yuan Yao. Fast Stochastic Ordinal Embedding with Variance Reduction and Adaptive Step Size. IEEE Transactions on Knowledge and Data Engineering (TKDE), 33(6): 2467–2478, Jun. 2021. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1912.00362">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/Stabilized_Stochastic_BB">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/16264">What to Select: Pursuing Consistent Motion Segmentation from Multiple Geometric Models</a></strong><br>Yangbangyan Jiang, Qianqian Xu, Ke Ma, Zhiyong Yang, Xiaochun Cao and Qingming Huang. What to Select: Pursuing Consistent Motion Segmentation from Multiple Geometric Models. AAAI Conference on Artificial Intelligence (AAAI), 1708–1716, 2021. [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/AAAI21-ConsistentMoSeg/blob/main/paper/aaai2021_ConsistentMoSeg_main_paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/AAAI21-ConsistentMoSeg/tree/main/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/AAAI21-ConsistentMoSeg/blob/main/paper/aaai2021_ConsistentMoSeg_supp.pdf">supp</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ojs.aaai.org/index.php/AAAI/article/view/16850">Dual Quaternion Knowledge Graph Embeddings</a></strong><br>Zongsheng Cao, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Dual Quaternion Knowledge Graph Embeddings. AAAI Conference on Artificial Intelligence (AAAI), 6894–6902, 2021. [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/DualE/blob/main/DualE-master/DualE.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/DualE/tree/main/DualE-master/DualE-master">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/Lion-ZS/DualE/blob/main/DualE-master/Supplement%20of%20DualE/Supplement%20of%20DualE.pdf">supp</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3474085.3475407">Learning Meta-path-aware Embeddings for Recommender Systems</a></strong><br>Qianxiu Hao, Qianqian Xu, Zhiyong Yang and Qingming Huang. Learning Meta-path-aware Embeddings for Recommender Systems. ACM Conference on Multimedia (ACM MM), 3909–3917, 2021. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianxiuhao1017/metapathRS/blob/main/metapathRS.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianxiuhao1017/metapathRS">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3474085.3475706">Pareto Optimality for Fairness-constrained Collaborative Filtering</a></strong><br>Qianxiu Hao, Qianqian Xu, Zhiyong Yang and Qingming Huang. Pareto Optimality for Fairness-constrained Collaborative Filtering. ACM Conference on Multimedia (ACM MM), 5619–5627, 2021. [<a target="_blank" rel="noopener" href="https://github.com/qianxiuhao1017/Pareto_constrained_MOO/blob/main/Pareto_cpnstrained_MOO.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianxiuhao1017/Pareto_constrained_MOO">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3474085.3475446">Implicit feedbacks are not always favorable: Iterative Relabeled One-Class Collaborative Filtering against Noisy Interactions</a></strong><br>Zitai Wang, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Implicit feedbacks are not always favorable: Iterative Relabeled One-Class Collaborative Filtering against Noisy Interactions. ACM Conference on Multimedia (ACM MM), 3070–3078, 2021. [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Iterative-Relabeled-One-Class-Collaborative-Filtering-against-Noisy-Interactions/blob/main/mfp1549-wangA.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Iterative-Relabeled-One-Class-Collaborative-Filtering-against-Noisy-Interactions">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Iterative-Relabeled-One-Class-Collaborative-Filtering-against-Noisy-Interactions/blob/main/Poster-MM21-zitai.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Iterative-Relabeled-One-Class-Collaborative-Filtering-against-Noisy-Interactions/blob/main/MM2021_slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9247470/">DPANet: Depth Potentiality-Aware Gated Attention Network for RGB-D Salient Object Detection</a></strong><br>Zuyao Chen, Runmin Cong, Qianqian Xu and Qingming Huang. DPANet: Depth Potentiality-Aware Gated Attention Network for RGB-D Salient Object Detection. IEEE Transactions on Image Processing (TIP), 30: 7012–7024, Aug. 2021. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2003.08608">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/JosephChenHub/DPANet">code</a>]</li>
+</ul>
+<h3 id="2020"><a href="#2020" class="headerlink" title="2020"></a>2020</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://www.aaai.org/ojs/index.php/AAAI/article/view/5359">Who Likes What? – SplitLBI in Exploring Preferential Diversity of Ratings</a></strong><br>Qianqian Xu, Jiechao Xiong, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. Who Likes What? – SplitLBI in Exploring Preferential Diversity of Ratings. AAAI Conference on Artificial Intelligence (AAAI), 262–269, 2020. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2020/blob/master/paper/AAAI2020-Xu.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2020/blob/master/supplementary/AAAI2020Supp.pdf">supp</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2020/blob/master/paper/AAAI2020-Xu-slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9082165">Task-Feature Collaborative Learning with Application to Personalized Attribute Prediction</a></strong><br>Zhiyong Yang, Qianqian Xu, Xiaochun Cao and Qingming Huang. Task-Feature Collaborative Learning with Application to Personalized Attribute Prediction. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 43(11): 4094–4110, Nov. 2021. (Regular paper) [<a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/341034304_Task-Feature_Collaborative_Learning_with_Application_to_Personalized_Attribute_Prediction">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/T-PAMI20-Task-Feature-Collaborative-Learning-with-Application-to-Personalized-Attribute-Prediction">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.aaai.org/ojs/index.php/AAAI/article/view/6633">Global Context-Aware Progressive Aggregation Network for Salient Object Detection</a></strong><br>Zuyao Chen, Qianqian Xu, Ruimin Cong and Qingming Huang. Global Context-Aware Progressive Aggregation Network for Salient Object Detection. AAAI Conference on Artificial Intelligence (AAAI), 10599–10606, 2020. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/JosephChenHub/GCPANet/blob/master/GCPANet.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/JosephChenHub/GCPANet">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3394171.3414035">DMVOS: Discriminative Matching for Real-time Video Object Segmentation</a></strong><br>Peisong Wen, Ruolin Yang, Qianqian Xu, Chen Qian, Qingming Huang, Runmin Cong, Jianlou Si. DMVOS: Discriminative Matching for Real-time Video Object Segmentation. ACM Conference on Multimedia (ACM MM), 2048–2056, 2020. [<a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1awFwqEjQHG2jbTVUTR2576sy8-nvbw_f/view">pdf</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3394171.3413992">Quaternion-Based Knowledge Graph Network for Recommendation</a></strong><br>Zhaopeng Li, Qianqian Xu, Yangbangyan Jiang, Xiaochun Cao and Qingming Huang. Quaternion-Based Knowledge Graph Network for Recommendation. ACM Conference on Multimedia (ACM MM), 880–888, 2020. (Oral) [<a target="_blank" rel="noopener" href="https://www.researchgate.net/profile/Yangbangyan-Jiang/publication/346192270_Quaternion-Based_Knowledge_Graph_Network_for_Recommendation/links/65483c23b86a1d521bbb481f/Quaternion-Based-Knowledge-Graph-Network-for-Recommendation.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/lzp-iie/QKGN">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3394171.3413739">Task-distribution-aware Meta-learning for Cold-start CTR Prediction</a></strong><br>Tianwei Cao, Qianqian Xu, Zhiyong Yang and Qingming Huang. Task-distribution-aware Meta-learning for Cold-start CTR Prediction. ACM Conference on Multimedia (ACM MM), 3514–3522, 2020. [<a target="_blank" rel="noopener" href="https://github.com/caotianwei/tdaml_pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/ppp1992/tdaml">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3394171.3413777">IR-GAN: Image Manipulation with Linguistic Instruction by Increment Reasoning</a></strong><br>Zhenhuan Liu, Jincan Deng, Liang Li, Shaofei Cai, Qianqian Xu, Shuhui Wang and Qingming Huang. IR-GAN: Image Manipulation with Linguistic Instruction by Increment Reasoning. ACM Conference on Multimedia (ACM MM), 322–330, 2020. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2204.00792.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Victarry/IR-GAN-Code">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3394171.3413928">NuI-Go: Recursive Non-local Encoder-Decoder Network for Retinal Image Non-uniform Illumination Removal</a></strong><br>Chongyi Li, Huazhu Fu, Runmin Cong, Zechao Li and Qianqian Xu. NuI-Go: Recursive Non-local Encoder-Decoder Network for Retinal Image Non-uniform Illumination Removal. ACM Conference on Multimedia (ACM MM), 1478–1487, 2020. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2008.02984.pdf">pdf</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9141200">Neural Collaborative Preference Learning with Pairwise Comparisons</a></strong><br>Zhaopeng Li, Qianqian Xu, Yangbangyan Jiang, Ke Ma, Xiaochun Cao and Qingming Huang. Neural Collaborative Preference Learning with Pairwise Comparisons. IEEE Transactions on Multimedia (TMM), 23: 1977-1989, Dec. 2021. [<a target="_blank" rel="noopener" href="https://github.com/lzp-iie/Neural-Collaborative-Preference-Learning/blob/master/pdf/Early_Access.PDF">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/lzp-iie/Neural-Collaborative-Preference-Learning">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007%2F978-3-030-58598-3_14">RGB-D Salient Object Detection with Cross Modality Modulation and Selection</a></strong><br>Chongyi Li, Runmin Cong, Yongri Piao, Qianqian Xu and Chen Change Loy. RGB-D Salient Object Detection with Cross Modality Modulation and Selection. European Conference on Computer Vision (ECCV), 225–241, 2020. [<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2007.07051">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/Li-Chongyi/cmMS-ECCV20">code</a>]</li>
+</ul>
+<h3 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8319957/">From Social to Individuals: a Parsimonious Path of Multi-level Models for Crowdsourced Preference Aggregation</a></strong><br>Qianqian Xu, Jiechao Xiong, Xiaochun Cao, Qingming Huang and Yuan Yao. From Social to Individuals: a Parsimonious Path of Multi-level Models for Crowdsourced Preference Aggregation. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 41(4): 844–856, Apr. 2019. (Regular paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/blob/master/journal%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/tree/master/code">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/8645-isplit-lbi-individualized-partial-ranking-with-ties-via-split-lbi">iSplit LBI: Individualized Partial Ranking with Ties via Split LBI</a></strong><br>Qianqian Xu, Xinwei Sun, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. iSplit LBI: Individualized Partial Ranking with Ties via Split LBI. Annual Conference on Neural Information Processing Systems (NeurIPS), 3896–3906, 2019. [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/NeurIPS2019-iSplitLBI/blob/master/paper/NeurIPS19-iSplitLBI.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/NeurIPS2019-iSplitLBI">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/NeurIPS2019-iSplitLBI/blob/master/poster/NeurIPS2019-iSplitLBI-Poster.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="http://openaccess.thecvf.com/content_CVPR_2019/html/Xu_Deep_Robust_Subjective_Visual_Property_Prediction_in_Crowdsourcing_CVPR_2019_paper.html">Deep Robust Subjective Visual Property Prediction in Crowdsourcing</a></strong><br>Qianqian Xu, Zhiyong Yang, Yangbangyan Jiang, Xiaochun Cao, Qingming Huang and Yuan Yao. Deep Robust Subjective Visual Property Prediction in Crowdsourcing. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 8993–9001, 2019. [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/CVPR19-Deep-Robust-Subjective-Visual-Property-Prediction-in-Crowdsourcing/blob/master/paper/CVPR2019_xu.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/CVPR19-Deep-Robust-Subjective-Visual-Property-Prediction-in-Crowdsourcing">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/CVPR19-Deep-Robust-Subjective-Visual-Property-Prediction-in-Crowdsourcing/blob/master/paper/Poster-CVPR19-Deep_Robust_SVP_Prediction.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/8820-generalized-block-diagonal-structure-pursuit-learning-soft-latent-task-assignment-against-negative-transfer">Generalized Block-Diagonal Structure Pursuit: Learning Soft Latent Task Assignment against Negative Transfer</a></strong><br>Zhiyong Yang, Qianqian Xu, Yangbangyan Jiang, Xiaochun Cao and Qingming Huang. Generalized Block-Diagonal Structure Pursuit: Learning Soft Latent Task Assignment against Negative Transfer. Annual Conference on Neural Information Processing Systems (NeurIPS), 5846–5857, 2019. [<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=rylOcEreUr">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/GBDSP-NeurIPS19">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/GBDSP-NeurIPS19/blob/master/conference_poster_2.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/8823-dm2c-deep-mixed-modal-clustering">DM2C: Deep Mixed-Modal Clustering</a></strong><br>Yangbangyan Jiang, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. DM2C: Deep Mixed-Modal Clustering. Annual Conference on Neural Information Processing Systems (NeurIPS), 5880–5890, 2019. (Spotlight) [<a target="_blank" rel="noopener" href="https://openreview.net/pdf?id=rJgt54Bx8r">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DM2C/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DM2C/blob/master/poster/NeurIPS2019-DM2C-Poster.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DM2C/blob/master/slides/NeurIPS2019-DM2C-slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ojs/index.php/AAAI/article/view/4510">Learning Personalized Attribute Preference via Multi-task AUC Optimization</a></strong><br>Zhiyong Yang, Qianqian Xu, Xiaochun Cao and Qingming Huang. Learning Personalized Attribute Preference via Multi-task AUC Optimization. AAAI Conference on Artificial Intelligence (AAAI), 5660–5667, 2019. (Oral) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1906.07341">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-19-Learning-Personalized-Attribute-Preference-via-Multi-task-AUC-Optimization">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-19-Learning-Personalized-Attribute-Preference-via-Multi-task-AUC-Optimization/blob/master/post_aaai19_zhiyong.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI19_3053_slides/blob/master/aaai_3053_slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ojs/index.php/AAAI/article/view/4154">Less but Better: Generalization Enhancement of Ordinal Embedding via Distributional Margin</a></strong><br>Ke Ma, Qianqian Xu, Zhiyong Yang and Xiaochun Cao. Less but Better: Generalization Enhancement of Ordinal Embedding via Distributional Margin. AAAI Conference on Artificial Intelligence (AAAI), 2978–2985, 2019. [<a target="_blank" rel="noopener" href="http://arxiv.org/abs/1812.01939">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/DMOE">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/alphaprime.github.io/blob/master/AAAI_19_Poster_1497.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ojs/index.php/AAAI/article/view/4790">Robust Ordinal Embedding from Contaminated Relative Comparisons</a></strong><br>Ke Ma, Qianqian Xu and Xiaochun Cao. Robust Ordinal Embedding from Contaminated Relative Comparisons. AAAI Conference on Artificial Intelligence (AAAI), 7908–7915, 2019. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1812.01945">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/ROE">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/alphaprime.github.io/blob/master/AAAI_19_Poster_4517.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8712567">Split Multiplicative Multi-view Subspace Clustering</a></strong><br>Zhiyong Yang, Qianqian Xu, Weigang Zhang, Xiaochun Cao and Qingming Huang. Split Multiplicative Multi-view Subspace Clustering. IEEE Transactions on Image Processing (TIP), 28(10): 5147–5160, May 2019. (Regular paper) [<a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/333007034_Split_Multiplicative_Multi-view_Subspace_Clustering">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/SM2SC">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3350915">Collaborative Preference Embedding against Sparse Labels</a></strong><br>Shilong Bao, Qianqian Xu, Ke Ma, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Collaborative Preference Embedding against Sparse Labels. ACM Conference on Multimedia (ACM MM), 2079–2087, 2019. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE/blob/master/Collaborative%20Preference%20Embedding%20against%20Sparse%20Labels.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE/blob/master/CPE_Poster.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/statusrank/CPE/blob/master/CPE_Slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3350919">Adversarial Preference Learning with Pairwise Comparisons</a></strong><br>Zitai Wang, Qianqian Xu, Ke Ma, Yangbangyan Jiang, Xiaochun Cao and Qingming Huang. Adversarial Preference Learning with Pairwise Comparisons. ACM Conference on Multimedia (ACM MM), 656–664, 2019. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons/blob/master/MM2019-fp337.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons/blob/master/Poster-MM19-Adversarial%20Preference%20Learning%20with%20Pairwise%20Comparisons.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/wang22ti/Adversarial-Preference-Learning-with-Pairwise-Comparisons/blob/master/Slide_MM2019_Adversarial%20Preference%20Learning%20with%20Pairwise%20Comparisons.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3350852">Duet Robust Deep Subspace Clustering</a></strong><br>Yangbangyan Jiang, Qianqian Xu, Zhiyong Yang, Xiaochun Cao and Qingming Huang. Duet Robust Deep Subspace Clustering. ACM Conference on Multimedia (ACM MM), 1596–1604, 2019. (Spotlight) [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC/blob/master/paper/MM19-Duet-Robust-Deep-Subspace-Clustering.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC/blob/master/paper/MM19-DRDSC-Poster.pdf">poster</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/DRDSC/blob/master/paper/MM19-DRDSC-Slides.pdf">slides</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8692732">Low-Light Image Enhancement via a Deep Hybrid Network</a></strong><br>Wenqi Ren, Sifei Liu, Lin Ma, Qianqian Xu, Xiangyu Xu, Xiaochun Cao, Junping Du and Ming-Hsuan Yang. Low-Light Image Enhancement via a Deep Hybrid Network. IEEE Transactions on Image Processing (TIP), 28(9): 4364–4375, Sep. 2019. (Regular paper) [<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/8692732">pdf</a>] [<a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1WYQd5z9NXW-IOWLSH3w70t3XnLUAHnAZ/view?usp=sharing">code</a>]</li>
+</ul>
+<h3 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3240597">A Margin-based MLE for Crowdsourced Partial Ranking</a></strong><br>Qianqian Xu, Jiechao Xiong, Xinwei Sun, Zhiyong Yang, Xiaochun Cao, Qingming Huang and Yuan Yao. A Margin-based MLE for Crowdsourced Partial Ranking. ACM Conference on Multimedia (ACM MM), 591–599, 2018. (Full paper) [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1807.11014">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2018">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2018/blob/master/poster/MM18_poster_XU.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16218">HodgeRank with Information Maximization for Crowdsourced Pairwise Ranking Aggregation</a></strong><br>Qianqian Xu, Jiechao Xiong, Xi Chen, Qingming Huang and Yuan Yao. HodgeRank with Information Maximization for Crowdsourced Pairwise Ranking Aggregation. AAAI Conference on Artificial Intelligence (AAAI), 4326–4334, 2018. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2018/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2018/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/AAAI2018/tree/master/dataset">dataset</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16597">From Common to Special: When Multi-Attribute Learning Meets Personalized Opinions</a></strong><br>Zhiyong Yang, Qianqian Xu, Xiaochun Cao and Qingming Huang. From Common to Special: When Multi-Attribute Learning Meets Personalized Opinions. AAAI Conference on Artificial Intelligence (AAAI), 515–522, 2018. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.06867">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-2018-From-Common-to-Special-When-Multi-Attribute-Learning-Meets-Personalized-Opinions">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/joshuaas/AAAI-2018-From-Common-to-Special-When-Multi-Attribute-Learning-Meets-Personalized-Opinions/blob/master/post_aaai18_zhiyong.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16082">Stochastic Non-convex Ordinal Embedding with Stabilized Barzilai-Borwein Step Size</a></strong><br>Ke Ma, Jinshan Zeng, Jiechao Xiong, Qianqian Xu, Xiaochun Cao, Wei Liu and Yuan Yao. Stochastic Non-convex Ordinal Embedding with Stabilized Barzilai-Borwein Step Size. AAAI Conference on Artificial Intelligence (AAAI), 3738–3745, 2018. [<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1711.06446">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/Stabilized_Stochastic_BB">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/alphaprime/alphaprime.github.io/blob/master/AAAI_18_Poster.pdf">poster</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3240582">When to Learn What: Deep Cognitive Subspace Clustering</a></strong><br>Yangbangyan Jiang, Zhiyong Yang, Qianqian Xu, Xiaochun Cao and Qingming Huang. When to Learn What: Deep Cognitive Subspace Clustering. ACM Conference on Multimedia (ACM MM), 718–726, 2018. (Full paper) [<a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/328375144_When_to_Learn_What_Deep_Cognitive_Subspace_Clustering">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/MM18-Deep-Cognitive-Subspace-Clustering">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/jiangyangby/MM18-Deep-Cognitive-Subspace-Clustering/blob/master/paper/MM18-DeepCogSC-Poster.pdf">poster</a>]</li>
+</ul>
+<h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3123267">Exploring Outliers in Crowdsourced Ranking for QoE</a></strong><br>Qianqian Xu, Ming Yan, Chendi Huang, Jiechao Xiong, Qingming Huang, and Yuan Yao. Exploring Outliers in Crowdsourced Ranking for QoE. ACM Conference on Multimedia (ACM MM), 1540–1548, 2017. (Full paper, Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2017/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2017/tree/master/code">code</a>]</li>
+</ul>
+<h3 id="2016"><a href="#2016" class="headerlink" title="2016"></a>2016</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=3045526">False Discovery Rate Control and Statistical Quality Assessment of Annotators in Crowdsourced Ranking</a></strong><br>Qianqian Xu, Jiechao Xiong, Xiaochun Cao, and Yuan Yao. False Discovery Rate Control and Statistical Quality Assessment of Annotators in Crowdsourced Ranking. International Conference on Machine Learning (ICML), 1282–1291, 2016. (Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ICML2016/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ICML2016/tree/master/code">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2964298">Parsimonious Mixed-Effects HodgeRank for Crowdsourced Preference Aggregation</a></strong><br>Qianqian Xu, Jiechao Xiong, Xiaochun Cao, and Yuan Yao. Parsimonious Mixed-Effects HodgeRank for Crowdsourced Preference Aggregation. ACM Conference on Multimedia (ACM MM), 841–850, 2016. (Full paper, Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/blob/master/conference%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TPAMI2018/tree/master/code">code</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S1063520316000300">Analysis of crowdsourced sampling strategies for HodgeRank with sparse random graphs</a></strong><br>Braxton Osting, Jiechao Xiong, Qianqian Xu, and Yuan Yao. Analysis of crowdsourced sampling strategies for HodgeRank with sparse random graphs. Applied and Computational Harmonic Analysis (ACHA), 41(2): 540–560, 2016. [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACHA2016/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACHA2016/tree/master/code">code</a>]</li>
+</ul>
+<h3 id="2014"><a href="#2014" class="headerlink" title="2014"></a>2014</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/6675048">Online HodgeRank on Random Graphs for Crowdsourceable QoE Evaluation</a></strong><br>Qianqian Xu, Jiechao Xiong, Qingming Huang, and Yuan Yao. Online HodgeRank on Random Graphs for Crowdsourceable QoE Evaluation. IEEE Transactions on Multimedia (TMM), 16(2): 373–386, Feb. 2014. (Regular paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/blob/master/journal%20verison.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/PC-IQA%20dataset">dataset</a>]</li>
+</ul>
+<h3 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2502083">Robust Evaluation for Quality of Experience in Crowdsourcing</a></strong><br>Qianqian Xu, Jiechao Xiong, Qingming Huang, and Yuan Yao. Robust Evaluation for Quality of Experience in Crowdsourcing. ACM Conference on Multimedia (ACM MM), 43–52, 2013. (Full paper, Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/blob/master/paper.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/tree/master/PC-IQA%20dataset">PC-IQA dataset</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/ACM-MM2013/tree/master/PC-VQA%20dataset">PC-VQA dataset</a>]</li>
+</ul>
+<h3 id="2012"><a href="#2012" class="headerlink" title="2012"></a>2012</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2393400">Online Crowdsourcing Subjective Image Quality Assessment</a></strong><br>Qianqian Xu, Qingming Huang and Yuan Yao. Online Crowdsourcing Subjective Image Quality Assessment. ACM Conference on Multimedia (ACM MM), 359–368, 2012. (Full paper, Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/blob/master/conference%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2014/tree/master/PC-IQA%20dataset">dataset</a>]</li>
+<li><strong><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/6170000">HodgeRank on Random Graphs for Subjective Video Quality Assessment</a></strong><br>Qianqian Xu, Qingming Huang, Tingting Jiang, Bowei Yan, Weisi Lin and Yuan Yao. HodgeRank on Random Graphs for Subjective Video Quality Assessment. IEEE Transactions on Multimedia (TMM), 14(3): 844–857, Jun. 2012. (Regular paper) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/blob/master/journal%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/PC-VQA%20dataset">dataset</a>]</li>
+</ul>
+<h3 id="2011"><a href="#2011" class="headerlink" title="2011"></a>2011</h3><ul>
+<li><strong><a target="_blank" rel="noopener" href="https://dl.acm.org/citation.cfm?id=2072350">Random Partial Paired Comparison for Subjective Video Quality Assessment via HodgeRank</a></strong><br>Qianqian Xu, Tingting Jiang, Yuan Yao, Qingming Huang, Bowei Yan and Weisi Lin. Random Partial Paired Comparison for Subjective Video Quality Assessment via HodgeRank. ACM Conference on Multimedia (ACM MM), 393–402, 2011. (Full paper, Oral) [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/blob/master/conference%20version.pdf">pdf</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/code">code</a>] [<a target="_blank" rel="noopener" href="https://github.com/qianqianxu010/TMM2012/tree/master/PC-VQA%20dataset">dataset</a>]</li>
+</ul>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Qianqian Xu" />
+            
+              <p class="site-author-name" itemprop="name">Qianqian Xu</p>
+              <p class="site-description motion-element" itemprop="description">Professor,<br>Institute of Computing Technology, Chinese Academy of Sciences</p>
+          </div>
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/qianqianxu010" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;qianqianxu010" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xuqianqian@ict.ac.cn" title="E-Mail &amp;rarr; mailto:xuqianqian@ict.ac.cn" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://scholar.google.com.hk/citations?user=MjifS2MAAAAJ&hl=zh-CN" title="GoogleScholar &amp;rarr; https:&#x2F;&#x2F;scholar.google.com.hk&#x2F;citations?user&#x3D;MjifS2MAAAAJ&amp;hl&#x3D;zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>GoogleScholar</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://dblp.uni-trier.de/pers/hd/x/Xu:Qianqian" title="DBLP &amp;rarr; https:&#x2F;&#x2F;dblp.uni-trier.de&#x2F;pers&#x2F;hd&#x2F;x&#x2F;Xu:Qianqian" rel="noopener" target="_blank"><i class="fa fa-fw fa-compass"></i>DBLP</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2026"><span class="nav-number">1.</span> <span class="nav-text">2026</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2025"><span class="nav-number">2.</span> <span class="nav-text">2025</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024"><span class="nav-number">3.</span> <span class="nav-text">2024</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023"><span class="nav-number">4.</span> <span class="nav-text">2023</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2022"><span class="nav-number">5.</span> <span class="nav-text">2022</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021"><span class="nav-number">6.</span> <span class="nav-text">2021</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020"><span class="nav-number">7.</span> <span class="nav-text">2020</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2019"><span class="nav-number">8.</span> <span class="nav-text">2019</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018"><span class="nav-number">9.</span> <span class="nav-text">2018</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2017"><span class="nav-number">10.</span> <span class="nav-text">2017</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2016"><span class="nav-number">11.</span> <span class="nav-text">2016</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2014"><span class="nav-number">12.</span> <span class="nav-text">2014</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2013"><span class="nav-number">13.</span> <span class="nav-text">2013</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2012"><span class="nav-number">14.</span> <span class="nav-text">2012</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2011"><span class="nav-number">15.</span> <span class="nav-text">2011</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qianqian Xu</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.4.2</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
